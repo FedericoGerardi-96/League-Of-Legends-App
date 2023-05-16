@@ -1,6 +1,6 @@
 export async function getChampions() {
   try {
-    const response = await fetch("http://ddragon.leagueoflegends.com/cdn/13.9.1/data/es_AR/champion.json");
+    const response = await fetch("https://ddragon.leagueoflegends.com/cdn/13.9.1/data/es_AR/champion.json");
     const data = await response.json();
     const champions = Object.values(data.data);
     return { data: champions, ok: true, status: 200, message: "Champions list" };
@@ -12,7 +12,7 @@ export async function getChampions() {
 
 export async function getChampion(name) {
   try {
-    const response = await fetch(`http://ddragon.leagueoflegends.com/cdn/13.9.1/data/es_AR/champion/${name}.json`);
+    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/13.9.1/data/es_AR/champion/${name}.json`);
     const data = await response.json();
     const champion = Object.values(data.data);
     return { data: champion, ok: true, status: 200, message: "Champions list" };
